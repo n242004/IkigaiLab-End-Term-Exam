@@ -2,7 +2,7 @@ const cityInput = document.querySelector("#city-input");
 const searchButton = document.querySelector("#search-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const daysForecastDiv = document.querySelector(".days-forecast");
-const API_KEY = "c7a75c83acadf4f1c195ebc4fe4a3757"; // Paste your API here
+const API_KEY = "3e717050084b99d563a4ced31f64323c"; // Paste your API here
 
 const createWeatherCard = (cityName, weatherItem, index) => {
     if(index === 0) {
