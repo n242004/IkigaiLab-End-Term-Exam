@@ -2,7 +2,7 @@ const cityInput = document.querySelector("#city-input");
 const searchButton = document.querySelector("#search-btn");
 const currentWeatherDiv = document.querySelector(".current-weather");
 const daysForecastDiv = document.querySelector(".days-forecast");
-const API_KEY = "3e717050084b99d563a4ced31f64323c"; // Paste your API here
+const API_KEY = "c7a75c83acadf4f1c195ebc4fe4a3757"; // Paste your API here
 
 const createWeatherCard = (cityName, weatherItem, index) => {
     if(index === 0) {
@@ -34,7 +34,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
 }
 
 const getWeatherDetails = (cityName, latitude, longitude) => {
-    const WEATHER_API_URL = https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY};
+    const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
     fetch(WEATHER_API_URL).then(response => response.json()).then(data => {
         const forecastArray = data.list;
         const uniqueForecastDays = new Set();
@@ -65,10 +65,10 @@ const getWeatherDetails = (cityName, latitude, longitude) => {
 const getCityCoordinates = () => {
     const cityName = cityInput.value.trim();
     if (cityName === "") return;
-    const API_URL = https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY};
+    const API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
   
     fetch(API_URL).then(response => response.json()).then(data => {
-        if (!data.length) return alert('No coordinates found for ${cityName}');
+        if (!data.length) return alert(`No coordinates found for ${cityName}`);
         const { lat, lon, name } = data[0];
         getWeatherDetails(name, lat, lon);
     }).catch(() => {
