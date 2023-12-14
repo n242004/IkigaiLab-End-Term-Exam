@@ -4,7 +4,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+
 .current-weather img {
   max-width: 120px;
   margin-top: -15px;
+  background-color: blueviolet;
 }
